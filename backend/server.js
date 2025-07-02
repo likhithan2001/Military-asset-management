@@ -6,10 +6,10 @@ const sequelize = require('./config/database');
 
 // import models BEFORE syncing
 require('./models/User');
-require('./models/Asset');
+
 require('./models/Purchase'); // <-- ensure you import Purchase model
 
-const assetRoutes = require('./routes/assetRoutes');
+
 const purchaseRoutes = require('./routes/purchaseRoutes');
 const authRoutes = require('./routes/authRoutes');
 
@@ -17,7 +17,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/assets', assetRoutes);
+
 app.use('/api/purchases', purchaseRoutes);
 app.use('/api/auth', authRoutes);
 
